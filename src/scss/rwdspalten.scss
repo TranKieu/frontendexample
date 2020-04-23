@@ -1,0 +1,63 @@
+body {
+    padding: 2rem;
+    margin: 0 auto;
+    /* keo dan het ra thi cung chi rong 60rem*/
+    max-width: 60rem;
+
+}
+
+/*khoảng cách bên ngoài vs phần khác*/
+$margin: 1rem;
+/*40rem = 40 * 16px = 640px 
+    vi co 2rem margin mà view = 671px se xuong dong
+    + 100% chinh la do dai view port
+*/
+$modifier: calc(40rem - 100%);
+
+.container {
+    display: flex;
+    /*xuống dòng khi container < flex-basis*/
+    flex-wrap: wrap;
+
+    /* xóa margin dưa thừa đi = - margin của item*/
+    margin: ($margin * -1);
+}
+
+.container>* {
+    /* background-color: #000;*/
+    border: 1px red solid;
+    /* width của item ko nhỏ hơn 33% - 2 * margin = chia 3 cot*/
+    min-width: calc(33% - (#{$margin} * 2));
+    max-width: 100%;
+    flex-grow: 1;
+    /*cai nay lam xuong dong khi width container nho lai*/
+    /*quan trong nhat la 40rem*/
+    flex-basis: calc(#{$modifier} * 999);
+    height: 20vh;
+    margin: $margin;
+}
+
+/*
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  --margin: 1rem;
+  --multiplier: calc(60rem - 100%);
+  margin: calc(var(--margin) * -1);
+}
+
+.container > * {
+  max-width: 100%;  
+  flex-grow: 1;
+  flex-basis: calc(var(--multiplier) * 999);
+  margin: var(--margin);
+}
+
+.container > :nth-child(2n - 1) {
+  min-width: calc(20% - (var(--margin) * 2));
+}
+
+.container > :nth-child(2n) {
+  min-width: calc(30% - (var(--margin) * 2));
+}
+*/

@@ -1,0 +1,140 @@
+@import "variables";
+@import "colors";
+@import "global";
+@import "typography";
+
+$red: #ee596f;
+$yellow: #feb800;
+$green: #07a787;
+$purple: #c765d0;
+$gray: #787878;
+$gray-light: #eee;
+$gray-dark: #2e3c54;
+
+.sign-in {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  background-color: $gray-light;
+  /* căn giữa website*/
+  margin: 25px auto;
+  /* tạo nền là các hình tròn */
+  position: relative;
+  /* hinh tron thua ra se bi cat di*/
+  overflow: hidden;
+  /* Can form ra giua*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  /* Thoat khoi flow can chinh tuy y */
+  position: absolute;
+  border-radius: 50%;
+
+  &--red {
+    width: 16vw;
+    height: 16vw;
+    background-color: $red;
+    top: 2vw;
+    left: 2vw;
+    z-index: 1;
+  }
+
+  &--yellow {
+    width: 8vw;
+    height: 8vw;
+    background-color: $yellow;
+    top: 3vw;
+    left: 15vw;
+    z-index: 0;
+  }
+
+  &--green {
+    width: 16vw;
+    height: 16vw;
+    background-color: $green;
+    bottom: 3vw;
+    right: 20vw;
+    z-index: 2;
+  }
+
+  &--purple {
+    width: 25vw;
+    height: 25vw;
+    background-color: $purple;
+    bottom: -5vw;
+    right: -2vw;
+  }
+}
+
+.form {
+  background-color: white;
+  width: 80%;
+  height: 70%;
+  border-radius: 8px;
+  z-index: 99;
+  /* Day Btn xuong duoi cung*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 20px 10px rgba(0, 0, 0, .15);
+
+  &__content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: $gray-dark;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    outline: none;
+    margin-bottom: 15px;
+    padding: 20px 20px 20px 0;
+    /* Bo vien cho Input => tao input dep*/
+    border: 0;
+    border-bottom: 1px solid $gray-light;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__forgot {
+    text-align: center;
+    color: $gray;
+    margin-top: 20px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    &>* {
+      width: 50%;
+      padding: 20px 15px;
+      text-align: center;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+  }
+
+  .btn {
+    &--register {
+      background-color: $gray-light;
+      color: $gray;
+    }
+
+    &--login {
+      background-color: $gray-dark;
+      color: whitesmoke;
+    }
+  }
+}

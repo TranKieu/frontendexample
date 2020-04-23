@@ -1,0 +1,104 @@
+@import "variables";
+@import "colors";
+@import "global";
+@import "typography";
+
+body {
+  background-color: #34495e;
+  color: #fff;
+}
+
+
+header {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.preis {
+  margin: 3vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &-btn {
+    display: block;
+    /* can giua*/
+    margin: 0 auto;
+    width: 80%;
+    padding: 1vw;
+    border-radius: 8px;
+    color: #fff;
+
+    &-basic {
+      background-color: #eb4d4b;
+    }
+
+    &-pro {
+      background-color: #f0932f;
+    }
+
+    &-enterprise {
+      background-color: #26b69a;
+    }
+
+  }
+}
+
+.package {
+  text-align: center;
+  margin: 2vh;
+
+  box-shadow: 1px 0 10px 15px rgba(0, 0, 0, .5);
+  transition: transform 2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &-header {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    line-height: 8vh;
+    padding: 2vh;
+  }
+
+  &-basic {
+    background-color: #eb4d4b;
+  }
+
+  &-pro {
+    background-color: #f0932f;
+  }
+
+  &-enterprise {
+    background-color: #26b69a;
+  }
+
+  ul {
+    padding: 2vh;
+  }
+
+  li {
+    padding: 1vh 1vh;
+    font-size: 1.5rem;
+
+    h4 {
+      font-size: 2.5rem;
+    }
+  }
+
+  small {
+    font-size: 1rem;
+    vertical-align: top;
+  }
+}
+
+/*mobil*/
+@media screen and (max-width: 640px) {
+  .package {
+    flex: 100%;
+    max-width: 100%;
+    /* 1 huong margin */
+    margin-bottom: 20px;
+  }
+}
